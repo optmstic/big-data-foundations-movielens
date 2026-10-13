@@ -1,0 +1,14 @@
+# Datasets are public and reproducible — see README "Reproduce the data".
+# GitHub also rejects any file over 100 MB.
+raw/
+parquet/
+*.duckdb
+*.duckdb.wal
+
+# Python
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
