@@ -38,6 +38,9 @@ The notebook ingests only feature films and the two IMDb columns it uses (year, 
 To try the small dataset first (100K ratings), put the CSVs of `ml-latest-small` in `raw/` instead and
 set `MIN_RATINGS_TOP = 50` and `MIN_RATINGS = 10` in section A. Nothing else changes.
 
+IMDb refreshes its files daily, so counts can differ slightly from the saved outputs, which come from the
+snapshot downloaded on 13 October 2026. MovieLens 32M is fixed.
+
 Then install the dependencies and run all cells of the notebook (safe to re-run):
 
 ```bash
