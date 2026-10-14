@@ -55,8 +55,6 @@ jupyter lab group_project.ipynb
 - **New sources plug in.** IMDb (12.9M titles) was added with one ingest step and one join, without touching the rest of the pipeline.
 - **Fast to rebuild.** The full pipeline, conversion included, ran in about 20 seconds on a laptop.
 
-Not tested yet: datasets larger than 32M, and the cloud layer (S3 and Athena), which would read the same Parquet files.
-
 ## Project details
 
 - Deliverable: slides (PDF, max 30) + scripts, submitted through Moodle
