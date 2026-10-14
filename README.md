@@ -39,14 +39,6 @@ pip install -r requirements.txt
 jupyter lab group_project.ipynb
 ```
 
-## Results
+## Project details
 
-- **Section F** — six analytical questions on genres, rating distribution, top-rated movies, activity per year, tags and user long tail.
-- **Section G** — IMDb enrichment via `links.csv` (`'tt' || imdbId`), 99.74% match rate.
-- **Section H** — performance evidence: Parquet is ~5.6× smaller than the CSV and 7–20× faster to query.
-
-## Course details
-
-- Group project, 40% of the final classification
-- Lecturer: Humberto Carreiro (hcarreiro@novaims.unl.pt)
 - Deliverable: slides (PDF, max 30) + scripts, submitted through Moodle
