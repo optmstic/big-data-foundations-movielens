@@ -35,6 +35,9 @@ gunzip title.basics.tsv.gz
 The notebook ingests only feature films and the two IMDb columns it uses (year, runtime), so the
 1.1 GB IMDb file becomes a 3.4 MB Parquet file.
 
+To try the small dataset first (100K ratings), put the CSVs of `ml-latest-small` in `raw/` instead and
+set `MIN_RATINGS_TOP = 50` and `MIN_RATINGS = 10` in section A. Nothing else changes.
+
 Then install the dependencies and run all cells of the notebook (safe to re-run):
 
 ```bash
