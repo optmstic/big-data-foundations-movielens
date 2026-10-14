@@ -1,4 +1,4 @@
-# Big Data Foundations (BDF) 2026 — Group Project
+# Big Data Foundations Group Project
 
 Course project for **Big Data Foundations** (Nova Information Management School, Nova IMS), 2026.
 Case analysis: **MovieLens 32M**, Phase 1 — the local analytical layer.
