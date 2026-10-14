@@ -11,7 +11,7 @@ Only MovieLens ratings are analysed, as they are (0.5–5 scale).
 
 | Path | Content |
 |---|---|
-| `group_project.ipynb` | Notebook (sections A–H, same pattern as the Week 3 lab). All outputs are saved in the file. |
+| `group_project.ipynb` | Notebook (sections A–G, same pattern as the Week 3 lab). All outputs are saved in the file. |
 | `raw/` | Input files (not committed — see below) |
 | `parquet/` | CSV/TSV converted to Parquet, ZSTD (not committed) |
 | `movielens.duckdb` | Catalog only: views over the Parquet files (not committed) |
@@ -32,8 +32,8 @@ curl -O https://datasets.imdbws.com/title.basics.tsv.gz
 gunzip title.basics.tsv.gz
 ```
 
-The notebook ingests only feature films and the 4 columns it uses, so the 1.1 GB IMDb file
-becomes a 3.4 MB Parquet file.
+The notebook ingests only feature films and the two IMDb columns it uses (year, runtime), so the
+1.1 GB IMDb file becomes a 3.4 MB Parquet file.
 
 Then install the dependencies and run all cells of the notebook (safe to re-run):
 
