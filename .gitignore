@@ -2,6 +2,9 @@
 # GitHub also rejects any file over 100 MB.
 raw/
 parquet/
+# data files dropped next to the notebook (it moves them into raw/)
+*.csv
+*.tsv
 *.duckdb
 *.duckdb.wal
 

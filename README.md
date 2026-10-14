@@ -11,7 +11,7 @@ Only MovieLens ratings are analysed, as they are (0.5–5 scale).
 
 | Path | Content |
 |---|---|
-| `group_project.ipynb` | Notebook (sections A–G, same pattern as the Week 3 lab). All outputs are saved in the file. |
+| `group_project.ipynb` | Notebook (sections A–H, same pattern as the Week 3 lab). All outputs are saved in the file. |
 | `raw/` | Input files (not committed — see below) |
 | `parquet/` | CSV/TSV converted to Parquet, ZSTD (not committed) |
 | `movielens.duckdb` | Catalog only: views over the Parquet files (not committed) |
@@ -36,7 +36,7 @@ The notebook ingests only feature films and the two IMDb columns it uses (year, 
 1.1 GB IMDb file becomes a 3.4 MB Parquet file.
 
 To try the small dataset first (100K ratings), put the CSVs of `ml-latest-small` in `raw/` instead and
-set `MIN_RATINGS_TOP = 50` and `MIN_RATINGS = 10` in section A. Nothing else changes.
+set `MIN_RATINGS_TOP = 50` (in Q3) and `MIN_RATINGS = 10` (in section G). Nothing else changes.
 
 IMDb refreshes its files daily, so counts can differ slightly from the saved outputs, which come from the
 snapshot downloaded on 13 October 2026. MovieLens 32M is fixed.
@@ -47,6 +47,15 @@ Then install the dependencies and run all cells of the notebook (safe to re-run)
 pip install -r requirements.txt
 jupyter lab group_project.ipynb
 ```
+
+## Scalability
+
+- **Same code, 300× more data.** The notebook runs unchanged on `ml-latest-small` (100K ratings) and on MovieLens 32M; only the two rating thresholds change.
+- **Columnar files, queried in place.** About 2 GB of CSV/TSV becomes about 176 MB of Parquet, and DuckDB reads those files through views, so nothing has to be loaded into memory first.
+- **New sources plug in.** IMDb (12.9M titles) was added with one ingest step and one join, without touching the rest of the pipeline.
+- **Fast to rebuild.** The full pipeline, conversion included, ran in about 20 seconds on a laptop.
+
+Not tested yet: datasets larger than 32M, and the cloud layer (S3 and Athena), which would read the same Parquet files.
 
 ## Project details
 
