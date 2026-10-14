@@ -53,7 +53,6 @@ jupyter lab group_project.ipynb
 - **Same code, 300× more data.** The pipeline runs unchanged on `ml-latest-small` (100K ratings) and on MovieLens 32M; only the two rating thresholds change.
 - **Columnar files, queried in place.** About 2 GB of CSV/TSV becomes about 176 MB of Parquet, and DuckDB reads those files through views, so nothing has to be loaded into memory first.
 - **New sources plug in.** IMDb (12.9M titles) was added with one ingest step and one join, without touching the rest of the pipeline.
-- **Fast to rebuild.** The full pipeline, conversion included, ran in about 20 seconds on a laptop.
 
 ## Project details
 
