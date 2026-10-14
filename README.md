@@ -4,7 +4,7 @@ Course project for **Big Data Foundations** (Nova Information Management School,
 Case analysis: **MovieLens 32M**, Phase 1 — the local analytical layer.
 
 DuckDB + Parquet analysis of [MovieLens 32M](https://grouplens.org/datasets/movielens),
-enriched with [IMDb metadata](https://datasets.imdbws.com) (`title.basics`: type, year, runtime).
+enriched with [IMDb metadata](https://datasets.imdbws.com) for release year and runtime.
 Only MovieLens ratings are analysed, as they are (0.5–5 scale).
 
 ## Structure
@@ -31,6 +31,9 @@ unzip ml-32m.zip && mv ml-32m/* . && rmdir ml-32m
 curl -O https://datasets.imdbws.com/title.basics.tsv.gz
 gunzip title.basics.tsv.gz
 ```
+
+The notebook ingests only feature films and the 4 columns it uses, so the 1.1 GB IMDb file
+becomes a 3.4 MB Parquet file.
 
 Then install the dependencies and run all cells of the notebook (safe to re-run):
 
